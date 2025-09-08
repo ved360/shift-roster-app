@@ -101,7 +101,7 @@ def get_assignment_for_person(row, person, shift_cols):
     for col in shift_cols:
         tokens = normalize_tokenize(row.get(col, None))
         if person in tokens:
-            return f"{ICONS.get(col, ''), TIMES.get(col, " "} {col} Shift"
+            return f"{ICONS.get(col, ''), TIMES.get(col, " ")} {col} Shift"
     for col in ["Off", "Leave"]:
         if col in row:
             tokens = normalize_tokenize(row[col])
