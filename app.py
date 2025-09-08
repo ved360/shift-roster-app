@@ -47,11 +47,11 @@ KNOWN_SHIFT_COLS = ["1st", "2nd", "3rd", "General", "LW/NI"]
 KNOWN_PEOPLE = ["VB", "RR", "ST", "SRB", "AH"]
 
 ICONS = {
-    "1st": "🌅",
-    "2nd": "🌞",
-    "3rd": "🌙",
-    "General": "🏢",
-    "LW/NI": "🚶‍♂️"
+    "1st": "🌅 | MORNING",
+    "2nd": "🌞 | EVENING",
+    "3rd": "🌙 | NIGHT",
+    "General": "🏢 | GENERAL",
+    "LW/NI": "🚶‍♂️ | LW"
 }
 
 def normalize_tokenize(cell):
