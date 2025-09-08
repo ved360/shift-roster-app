@@ -54,7 +54,7 @@ KNOWN_SHIFT_COLS = ["1st", "2nd", "3rd", "General", "LW/NI"]
 KNOWN_PEOPLE = ["VB", "RR", "ST", "SRB", "AH"]
 
 ICONS = {
-    "1st":   {"icon": "🌅", "label": "First Shift", "class": "shift-first"}
+    "1st":   {"icon": "🌅", "label": "First Shift", "class": "shift-first"},
     "2nd": {"icon": "🌞", "label": "Second Shift", "class": "shift-second"},
     "3rd": {"icon":"🌙", "label": "Third Shift", "class": "shift-third"},
     "General": {"icon":"🏢", "label": "General Shift", "class": "shift-general"},
