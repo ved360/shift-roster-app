@@ -35,6 +35,13 @@ st.markdown(
         font-weight:bold;
         color:#2E86C1;
     }
+
+    .shift-first { color: #27AE60; }   /* Green */
+    .shift-second { color: #2980B9; }  /* Blue */
+    .shift-third { color: #8E44AD; }   /* Purple */
+    .shift-general { color: #E67E22; } /* Orange */
+    .shift-lw { color: #7F8C8D; }      /* Gray */
+    .shift-off { color: #C0392B; }     /* Red */
     </style>
     """,
     unsafe_allow_html=True
@@ -47,19 +54,11 @@ KNOWN_SHIFT_COLS = ["1st", "2nd", "3rd", "General", "LW/NI"]
 KNOWN_PEOPLE = ["VB", "RR", "ST", "SRB", "AH"]
 
 ICONS = {
-    "1st": "🌅 | MORNING",
-    "2nd": "🌞 | EVENING",
-    "3rd": "🌙 | NIGHT",
-    "General": "🏢 | GENERAL",
-    "LW/NI": "🚶‍♂️ | LW"
-}
-
-TIMES = {
-    "1st": "MORNING",
-    "2nd": "EVENING",
-    "3rd": "NIGHT",
-    "General": "GENERAL",
-    "LW/NI": "LW"
+    "1st":   {"icon": "🌅", "label": "First Shift", "class": "shift-first"}
+    "2nd": {"icon": "🌞", "label": "Second Shift", "class": "shift-second"},
+    "3rd": {"icon":"🌙", "label": "Third Shift", "class": "shift-third"},
+    "General": {"icon":"🏢", "label": "General Shift", "class": "shift-general"},
+    "LW/NI": {"icon": "🚶‍♂️", "label":"Line Walking", "class": "shift-lw"}
 }
 
 def normalize_tokenize(cell):
@@ -101,7 +100,7 @@ def get_assignment_for_person(row, person, shift_cols):
     for col in shift_cols:
         tokens = normalize_tokenize(row.get(col, None))
         if person in tokens:
-            return f"{ICONS.get(col, ''), TIMES.get(col, " ")} {col} Shift"
+            return f"{ICONS.get(col, '')} {col} Shift"
     for col in ["Off", "Leave"]:
         if col in row:
             tokens = normalize_tokenize(row[col])
